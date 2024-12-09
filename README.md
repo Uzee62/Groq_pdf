@@ -29,5 +29,5 @@ This Streamlit-based web application allows users to interact with PDF documents
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/Uzee62/Groq_pdf.git
+   cd Groq_pdf
