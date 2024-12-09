@@ -13,7 +13,7 @@ GROQ_API_KEY = os.getenv('GROQ_API_KEY')
 os.environ["GOOGLE_API_KEY"] = os.getenv('GOOGLE_API_KEY')
 
 # Loading CSS
-load_css("css/style.css")
+load_css("CSS/style.css")
 
 #  LLM initialization
 llm = initialize_llm(GROQ_API_KEY)
