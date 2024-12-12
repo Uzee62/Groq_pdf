@@ -43,10 +43,10 @@ st.session_state.setdefault("last_question", None)
 
 prompt1 = st.text_input("______", placeholder="Enter your Question")
 language = st.selectbox("Choose a language", ["English", "French", "Spanish", "German", "Hindi", "Arabic", "Urdu"])
-words = st.slider("Word limit for response:", 1, 500, 50)
+lines = st.slider("line limit for response:", 1, 100, 10)
 
 if st.button("Respond"):
-    generate_response(llm, prompt1, language, words)
+    generate_response(llm, prompt1, language, lines)
 
 if st.session_state.response:
     st.markdown(

@@ -7,7 +7,7 @@ import streamlit as st
 def initialize_llm(api_key):
     return ChatGroq(api_key=api_key, model_name="Llama3-8b-8192")
 
-def generate_response(llm, prompt1, language, words):
+def generate_response(llm, prompt1, language, lines):
     if prompt1 and "vectors" in st.session_state:
         
         document_chain = create_stuff_documents_chain(llm, get_prompt_template())
@@ -16,7 +16,7 @@ def generate_response(llm, prompt1, language, words):
         
         response = retrieval_chain.invoke({
             'input': prompt1,
-            'words': words,
+            'lines': lines,
             'language': language
         })
             
@@ -28,7 +28,7 @@ def get_prompt_template():
         Answer the questions based on the provided context only.
         Please provide the most accurate response in {language} only.
         
-        The response should contain exactly {words} words or as close to it as possible.
+        The response should contain exactly {lines} lines or as close to it as possible.
         <context>
         {context}
         <context>
